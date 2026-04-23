@@ -1,7 +1,5 @@
 package core.stack;
 
-import java.util.*;
-
 public class MateStack<T> {
     private int size = 0;
     private Object[] stack = new Object[10];
@@ -20,7 +18,7 @@ public class MateStack<T> {
 
     public T peek() {
         if (size == 0) {
-            throw new EmptyStackException();
+            throw new IndexOutOfBoundsException("Array is empty");
         }
 
         return (T) stack[size - 1];
@@ -28,7 +26,7 @@ public class MateStack<T> {
 
     public T pop() {
         if (size == 0) {
-            throw new EmptyStackException();
+            throw new IndexOutOfBoundsException("Array is empty");
         }
 
         T value = (T) stack[--size];
